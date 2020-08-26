@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: container-status
+server:
+  port: 8080
+
+website:
+  loader:
+    required-headers: "__VIEWSTATE,__VIEWSTATEGENERATOR,__EVENTVALIDATION"
+  url: "https://concorindia.co.in/containerquery.aspx"
+  result:
+    PPosition: ["Container Number","Train Number","Orignating Station","Destination Station","Date/Time of Departure","Wagon No","Last Reported Station","Arrival at Destination"]
+    PInventory: ["Container Number","Container Type","Container Size","Shipping Line","Current Location"]
+
+file:
+  path:
+    from: "${HOME}/${spring.application.name}/input-files/"
+    to: "${HOME}/${spring.application.name}/output-files/"
